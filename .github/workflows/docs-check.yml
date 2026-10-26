@@ -1,0 +1,21 @@
+name: Documentation integrity
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify project foundation
+        run: |
+          test -s README.md
+          test -s AGENTS.md
+          test -s docs/MODELS.md
+          test -s docs/METHODOLOGY.md
+          test -s docs/DATA_SOURCES.md
+          test -s docs/ROADMAP.md
+          test -s configs/models.yaml
+          grep -q 'M23' docs/MODELS.md
+          git diff --check

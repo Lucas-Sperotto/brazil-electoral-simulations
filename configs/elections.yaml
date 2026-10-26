@@ -1,0 +1,6 @@
+# Escopo planejado, não significa que os dados já foram ingeridos.
+country: BR
+office: president
+years: [2002, 2006, 2010, 2014, 2018, 2022, 2026]
+rounds: [1, 2]
+first_validation_year: 2022
